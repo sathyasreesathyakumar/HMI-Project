@@ -20,7 +20,7 @@ function AppLayout() {
       /> }
       {/* <Sidebar /> */}
 
-      <div className="flex flex-1 flex-col overflow-hidden">
+      <div className="flex flex-1 flex-col">
         {/* { <Header
           collapsed={collapsed}
           toggleSidebar={toggleSidebar}
@@ -28,7 +28,7 @@ function AppLayout() {
         <Header /> 
 
 
-        <main className="flex-1 overflow-auto p-6">
+        <main className=" relative flex-1 overflow-hidden bg-slate-950 ">
           <Outlet />
         </main>
       </div>

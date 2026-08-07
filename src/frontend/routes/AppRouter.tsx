@@ -6,9 +6,9 @@ import {
 
 import Login from "../pages/auth/Login";
 import Machine from "../pages/dashboard/Machine";
-import Settings from "../pages/Settings";
+// import Settings from "./frontend/pages/Settings";
 import Unauthorized from "../pages/Unauthorized";
-import NotFound from "../pages/NotFound";
+// import NotFound from "../pages/NotFound";
 
 import ProtectedRoute from "./ProtectedRoute";
 import AppLayout from "../layouts/AppLayout";
@@ -39,10 +39,10 @@ function AppRouter() {
             element={<Machine />}
           />
 
-          <Route
+          {/* <Route
             path={ROUTES.SETTINGS}
             element={<Settings />}
-          />
+          /> */}
 
           <Route
             path={ROUTES.UNAUTHORIZED}
@@ -50,11 +50,11 @@ function AppRouter() {
           />
         </Route>
 
-        {/* Catch all route */}
+        {/* Catch all route
         <Route
           path="*"
           element={<NotFound />}
-        />
+        /> */}
 
       </Routes>
     </BrowserRouter>

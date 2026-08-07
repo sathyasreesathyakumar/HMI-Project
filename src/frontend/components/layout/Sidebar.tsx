@@ -32,19 +32,19 @@ function Sidebar({
       flex-col
       border-r
       border-slate-700
-      ${collapsed ? "w-20" : "w-64"}
+      ${collapsed ? "w-15" : "w-64"}
     `}
   >
 
     {/* LOGO SECTION */}
 
-    <div className="border-b border-slate-700 p-4">
+    <div className="border-b border-slate-700 p-2">
 
       <div className="flex items-center justify-between">
 
         {!collapsed && (
           <div>
-            <h1 className="text-2xl font-bold text-cyan-400">
+            <h1 className="text-xl font-bold text-cyan-400">
               FAHI-Q
             </h1>
 
@@ -69,7 +69,7 @@ function Sidebar({
 
     {/* MENU SECTION */}
 
-    <nav className="mt-4 flex flex-1 flex-col gap-2 px-3">
+    <nav className="mt-4 flex flex-1 flex-col gap-3 px-2">
 
       {menuItems.map((item) => {
         const Icon = item.icon;

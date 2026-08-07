@@ -3,8 +3,11 @@
 //   FaStop,
 //   FaRedoAlt,
 // } from "react-icons/fa";
-
+import { useEffect, useState } from "react";
+import { readTag, writeTag } from "../../services/opcService";
 function MachinePanel() {
+
+  const [counter, setCounter] = useState("1250");
   const topStations = [
     12, 13, 14, 15, 16, 17,
     18, 19, 20, 21, 22, 23,
@@ -15,39 +18,107 @@ function MachinePanel() {
     6, 5, 4, 3, 2, 1,
   ];
 
+  const handleCounterKeyDown = async (
+  e: React.KeyboardEvent<HTMLInputElement>
+) => {
+  if (e.key === "Enter") {
+
+    const result = await writeTag(
+  "counter",
+  Number(counter)
+);
+
+    console.log(result);
+    await loadCounter();
+
+  }
+  
+};
+const loadCounter = async () => {
+
+    const result = await readTag("counter");
+
+    if (result.status === "success") {
+        setCounter(String(result.value));
+    }
+    else {
+        console.log(result.message);
+    }
+
+};
+
+useEffect(() => {
+
+    loadCounter();
+
+    // const interval = setInterval(() => {
+    //     loadCounter();
+    // }, 1000);
+
+    // return () => clearInterval(interval);
+
+}, []);
+
   // CLIENT HAS 13 GREEN BARS
   const topGreenBars = Array(13).fill(null);
   const bottomGreenBars = Array(13).fill(null);
 
   return (
-    <div className="rounded-xl border border-slate-700 bg-slate-900 p-5 flex flex-col items-center">
+  
+    <div className="flex justify-center origin-top p-2 rounded-xl 
+    border border-slate-700 bg-slate-900 flex-col items-center">
 
       {/* Counter */}
 
-      <div className="mb-4 ">
+      <div className="mb-3 self-start ">
         <fieldset className="
-relative
-left-[-550px]
+
 border
-w-10
+
 border-slate-600
 rounded-lg
 inline-block
-p-3
+p-2
 ">
         <p className="text-sm text-slate-400">
-          COUNTER
-        </p>
+  COUNTER
+</p>
 
-        <h1 className="text-5xl font-bold text-cyan-400">
-          1250
-        </h1></fieldset>
+<input
+  type="number"
+  value={counter}
+  onChange={(e) => setCounter(e.target.value)}
+  onKeyDown={handleCounterKeyDown}
+  className="
+mt-2
+w-30
+rounded-lg
+border-2
+border-cyan-500/40
+bg-slate-950
+
+text-center
+text-3xl
+font-bold
+text-cyan-400
+outline-none
+focus:border-cyan-400
+focus:ring-2
+focus:ring-cyan-500/30
+transition-all
+"
+/>
+
+{/* <p className="mt-2 text-xs text-slate-500">
+  Press Enter to update
+</p> */}
+</fieldset>
       </div>
 
 
       {/* TOP NUMBERS */}
 
-      <div className="flex justify-left px-90 gap-4 text-white">
+      <div className="flex justify-left gap-4 text-white ">
 
         {topStations.map((station) => (
           <div
@@ -64,7 +135,7 @@ p-3
 
       {/* TOP BLUE SQUARES */}
 
-      <div className="mt-1 flex justify-left px-90 gap-4">
+      <div className="mt-0 flex justify-left  gap-4">
 
         {topStations.map((station) => (
           <div
@@ -79,7 +150,7 @@ p-3
 
       {/* TOP GREEN BARS */}
 
-      <div className="mt-2 flex justify-left px-90 gap-3">
+      <div className="mt-1.5 flex justify-left  gap-3">
 
         {topGreenBars.map((_, index) => (
           <div
@@ -94,7 +165,7 @@ p-3
 
       {/* MACHINE SECTION */}
 
-      <div className="mt-2 flex items-center justify-center gap-3">
+      <div className="mt-1.5 flex items-center justify-center gap-3">
 
 
         {/* LEFT INDICATORS */}
@@ -115,8 +186,8 @@ p-3
 
         <div
           className="
-          h-[180px]
-          w-[700px]
+          h-[150px]
+          w-[550px]
           rounded-[90px]
           border-[10px]
           border-yellow-400
@@ -127,11 +198,11 @@ p-3
           "
         >
        
-          <h1 className="text-4xl font-bold text-cyan-400">
+          <h1 className="text-3xl font-bold text-cyan-400">
             ALL STROKE
           </h1>
 
-          <p className="mt-2 text-white">
+          <p className="mt-0.5 text-white">
             24 STATION CAROUSEL
           </p>
 
@@ -139,14 +210,14 @@ p-3
 
           {/* LEGEND */}
  
-          <div className="mt-5 flex gap-8 text-white">
+          <div className="mt-1.5 flex gap-5 text-white">
 <fieldset className="
 border
 h-10
 border-slate-600
 rounded-lg
-p-3
-flex gap-8 text-white
+p-2
+flex gap-4 text-white
 ">
             <div className="flex items-center gap-2">
               <div className="h-4 w-4 rounded bg-green-500" />
@@ -173,11 +244,11 @@ flex gap-8 text-white
 
         <div className="space-y-4">
 
-          <div className="h-8 w-16 rotate-[160deg] rounded bg-gray-300" />
+          <div className="h-7 w-14 rotate-[160deg] rounded bg-gray-300" />
 
-          <div className="h-8 w-16 rounded bg-green-500" />
+          <div className="h-7 w-14 rounded bg-green-500" />
 
-          <div className="h-8 w-16 rotate-[20deg] rounded bg-gray-300" />
+          <div className="h-7 w-14 rotate-[20deg] rounded bg-gray-300" />
 
         </div>
 
@@ -216,7 +287,7 @@ flex gap-8 text-white
 
       {/* BOTTOM GREEN BARS */}
 
-      <div className="mt-3 flex justify-left px-90 gap-3">
+      <div className="mt-1.5 flex justify-left gap-3">
 
         {bottomGreenBars.map((_, index) => (
 
@@ -237,7 +308,7 @@ flex gap-8 text-white
 
       {/* BOTTOM BLUE SQUARES */}
 
-      <div className="mt-2 flex justify-left px-90 gap-4">
+      <div className="mt-1.5 flex justify-left  gap-4">
 
         {bottomStations.map((station) => (
           <div
@@ -252,7 +323,7 @@ flex gap-8 text-white
 
       {/* BOTTOM NUMBERS */}
 
-      <div className="mt-1 flex justify-left px-90 gap-4 text-white">
+      <div className="mt-0 flex justify-left gap-4 text-white">
 
         {bottomStations.map((station) => (
           <div
@@ -266,6 +337,7 @@ flex gap-8 text-white
       </div>
 
     </div>
+    
   );
 }
 

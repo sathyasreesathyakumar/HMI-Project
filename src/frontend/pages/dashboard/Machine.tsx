@@ -1,18 +1,18 @@
 import MachinePanel from "../../components/machine/MachinePanel";
 import MachineControls from "../../components/machine/MachineControls";
 import ProductionSummary from "../../components/machine/ProductionSummary";
-import ProductionChart from "../../components/charts/ProductionChart";
+// import ProductionChart from "../../components/charts/ProductionChart";
 
 
 function Machine() {
   return (
-    <div className="space-y-2 ">
+    <div className=" scale-95 -translate-y-4 ">
 
       {/* Machine UI + Controls */}
 
-      <div className="flex items-start gap-2 ">
+      <div className="flex justify-center ">
 
-        <div className="flex-1">
+        <div className="flex p-2 ">
           <MachinePanel />
         </div>
 
@@ -28,7 +28,7 @@ function Machine() {
 
       {/* Production Chart */}
 
-      <ProductionChart />
+      {/* <ProductionChart /> */}
 
 
       {/* Alarm Panel */}

@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+sqlalchemy
+pyodbc
+python-dotenv
+python-jose[cryptography]
+passlib[bcrypt]
+opcua
+pydantic
+
+python-dotenv

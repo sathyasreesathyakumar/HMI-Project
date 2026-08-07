@@ -3,23 +3,39 @@ import {
   FaStop,
   FaRedoAlt,
 } from "react-icons/fa";
+import {
+    startMachine,
+    stopMachine
+} from "../../services/opcService";
 
 function MachineControls() {
+  const handleStart = async () => {
+    const result = await startMachine();
+    console.log(result);
+};
+
+const handleStop = async () => {
+    const result = await stopMachine();
+    console.log(result);
+};
   return (
-    <div className="flex flex-col  gap-5">
-<fieldset  className="mt-20
+   
+  <div className="  scale-90 p-2">
+    <div className="flex flex-col ">
+<fieldset  className="mt-10
 border
-w-10
+w-5
 border-slate-600
 rounded-lg
-p-3
+p-2
 ">
       {/* START */}
 
       <button
+      onClick={handleStart}
         className="
         w-24
-        h-28
+        h-25
         rounded-lg
         bg-green-600
         hover:bg-green-700
@@ -35,7 +51,7 @@ p-3
       >
         <FaPlay size={28} />
 
-        <p className="mt-2 text-sm font-bold text-white">
+        <p className="mt-3 text-sm font-bold text-white">
           START
         </p>
       </button>
@@ -45,9 +61,10 @@ p-3
       {/* STOP */}
 
       <button
+       onClick={handleStop}
         className="
         w-24
-        h-28
+        h-25
         rounded-lg
         bg-red-600
         hover:bg-red-700
@@ -62,7 +79,7 @@ p-3
       >
         <FaStop size={28} />
 
-        <p className="mt-2 text-sm font-bold text-white">
+        <p className="mt-3 text-sm font-bold text-white">
           STOP
         </p>
       </button>
@@ -74,7 +91,7 @@ p-3
       <button
         className="
         w-24
-        h-28
+        h-25
         rounded-lg
         bg-slate-700
         hover:bg-slate-800
@@ -89,12 +106,14 @@ p-3
       >
         <FaRedoAlt size={28} />
 
-        <p className="mt-2 text-sm font-bold text-white">
+        <p className="mt-3 text-sm font-bold text-white">
           RESET
         </p>
       </button>
 </fieldset>
     </div>
+    </div>
+    // </div>
   );
 }
 

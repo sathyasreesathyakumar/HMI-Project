@@ -6,7 +6,7 @@ import {
   type ReactNode,
 } from "react";
 
-import { dummyUsers } from "../utils/users";
+import { dummyUsers } from "../../utils/users";
 import type { LoginCredentials, User } from "../types/auth";
 
 interface AuthContextType {

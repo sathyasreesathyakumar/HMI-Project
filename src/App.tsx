@@ -1,12 +1,13 @@
 
 
-import AppRouter from "./routes/AppRouter";
+import AppRouter from "./frontend/routes/AppRouter.tsx";
 
 function App() {
   return (
-  <>
- <AppRouter />
-    </>);
+    <>
+      <AppRouter />
+    </>
+  );
 }
 
 export default App;

@@ -4,7 +4,7 @@ import StatusBadge from "../common/StatusBadge";
 
 function Header() {
   return (
-    <header className="flex h-20 items-center justify-between border-b border-slate-700 bg-slate-900 px-6">
+    <header className="flex h-16 items-center justify-between border-b border-slate-700 bg-slate-900 px-5">
 
       {/* Left */}
 
