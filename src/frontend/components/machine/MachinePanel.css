@@ -1,0 +1,250 @@
+/* =========================================================
+   MACHINE CAROUSEL
+   ========================================================= */
+
+.machine-carousel {
+  position: absolute;
+  inset: 0;
+}
+
+
+/* =========================================================
+   SMOOTH CONVEYOR MOVEMENT
+   ========================================================= */
+
+.carousel-bar {
+  position: absolute;
+
+  /*
+   * IMPORTANT:
+   * Keep left/top/rotation synchronized.
+   * The bar now physically travels between the existing
+   * positions instead of snapping its angle.
+   */
+  transition:
+    left 1.15s cubic-bezier(0.45, 0, 0.55, 1),
+    top 1.15s cubic-bezier(0.45, 0, 0.55, 1),
+    transform 1.15s cubic-bezier(0.45, 0, 0.55, 1);
+
+  transform-origin: center center;
+
+  will-change:
+    left,
+    top,
+    transform;
+}
+
+.carousel-bar-rotation {
+  width: 28px;
+  height: 56px;
+}
+
+
+/* =========================================================
+   TOP POSITIONS
+   13 -> 24
+   ========================================================= */
+
+/*
+ * ALL top bars use the SAME rotational value.
+ *
+ * 180deg and 0deg look identical for this rectangular bar,
+ * but using 180deg consistently prevents the browser from
+ * doing an unwanted 180-degree spin between top stations.
+ */
+
+.carousel-top-0 {
+  left: 76px;
+  top: 0px;
+  transform: rotate(180deg);
+}
+
+.carousel-top-1 {
+  left: 116px;
+  top: 0px;
+  transform: rotate(180deg);
+}
+
+.carousel-top-2 {
+  left: 156px;
+  top: 0px;
+  transform: rotate(180deg);
+}
+
+.carousel-top-3 {
+  left: 196px;
+  top: 0px;
+  transform: rotate(180deg);
+}
+
+.carousel-top-4 {
+  left: 236px;
+  top: 0px;
+  transform: rotate(180deg);
+}
+
+.carousel-top-5 {
+  left: 276px;
+  top: 0px;
+  transform: rotate(180deg);
+}
+
+.carousel-top-6 {
+  left: 316px;
+  top: 0px;
+  transform: rotate(180deg);
+}
+
+.carousel-top-7 {
+  left: 356px;
+  top: 0px;
+  transform: rotate(180deg);
+}
+
+.carousel-top-8 {
+  left: 396px;
+  top: 0px;
+  transform: rotate(180deg);
+}
+
+.carousel-top-9 {
+  left: 436px;
+  top: 0px;
+  transform: rotate(180deg);
+}
+
+.carousel-top-10 {
+  left: 476px;
+  top: 0px;
+  transform: rotate(180deg);
+}
+
+.carousel-top-11 {
+  left: 516px;
+  top: 0px;
+  transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   BOTTOM POSITIONS
+   1 -> 12
+   ========================================================= */
+
+.carousel-bottom-0 {
+  left: 516px;
+  top: 214px;
+  transform: rotate(0deg);
+}
+
+.carousel-bottom-1 {
+  left: 476px;
+  top: 214px;
+  transform: rotate(0deg);
+}
+
+.carousel-bottom-2 {
+  left: 436px;
+  top: 214px;
+  transform: rotate(0deg);
+}
+
+.carousel-bottom-3 {
+  left: 396px;
+  top: 214px;
+  transform: rotate(0deg);
+}
+
+.carousel-bottom-4 {
+  left: 356px;
+  top: 214px;
+  transform: rotate(0deg);
+}
+
+.carousel-bottom-5 {
+  left: 316px;
+  top: 214px;
+  transform: rotate(0deg);
+}
+
+.carousel-bottom-6 {
+  left: 276px;
+  top: 214px;
+  transform: rotate(0deg);
+}
+
+.carousel-bottom-7 {
+  left: 236px;
+  top: 214px;
+  transform: rotate(0deg);
+}
+
+.carousel-bottom-8 {
+  left: 196px;
+  top: 214px;
+  transform: rotate(0deg);
+}
+
+.carousel-bottom-9 {
+  left: 156px;
+  top: 214px;
+  transform: rotate(0deg);
+}
+
+.carousel-bottom-10 {
+  left: 116px;
+  top: 214px;
+  transform: rotate(0deg);
+}
+
+.carousel-bottom-11 {
+  left: 76px;
+  top: 214px;
+  transform: rotate(0deg);
+}
+
+
+/* =========================================================
+   LEFT INDICATORS
+   ========================================================= */
+
+.carousel-left-1 {
+  left: 4px;
+  top: 139px;
+  transform: rotate(70deg);
+}
+
+.carousel-left-2 {
+  left: 4px;
+  top: 101px;
+  transform: rotate(90deg);
+}
+
+.carousel-left-3 {
+  left: 4px;
+  top: 63px;
+  transform: rotate(110deg);
+}
+
+
+/* =========================================================
+   RIGHT INDICATORS
+   ========================================================= */
+
+.carousel-right-1 {
+  left: 584px;
+  top: 63px;
+  transform: rotate(250deg);
+}
+
+.carousel-right-2 {
+  left: 584px;
+  top: 101px;
+  transform: rotate(270deg);
+}
+
+.carousel-right-3 {
+  left: 584px;
+  top: 139px;
+  transform: rotate(-70deg);
+}

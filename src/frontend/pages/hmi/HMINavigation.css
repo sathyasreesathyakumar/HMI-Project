@@ -1,0 +1,148 @@
+/* =========================================================
+   HMI NAVIGATION SCREEN
+   Original HMI design reference: 1920 x 1080
+   ========================================================= */
+
+.hmi-navigation {
+  width: 100vw;
+  height: 100vh;
+
+  background: #d9d9d9;
+
+  position: relative;
+  overflow: hidden;
+
+  font-family: Arial, sans-serif;
+}
+
+
+/* =========================================================
+   ORIGINAL 1920 x 1080 DESIGN AREA
+   ========================================================= */
+
+.hmi-menu {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+/* =========================================================
+   COMMON HMI BUTTON
+   ========================================================= */
+
+.hmi-menu-button {
+  position: absolute;
+
+  width: 14.43%;
+  height: 10.83%;
+
+  border: 2px solid red;
+  border-radius: 0;
+
+  background: #eeeeee;
+
+  font-size: clamp(14px, 1.15vw, 22px);
+  font-weight: 700;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+
+
+.hmi-menu-button:hover {
+  background: #ffffff;
+}
+
+
+.hmi-menu-button:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================================================
+   ORIGINAL B_3 POSITIONS
+   Converted from the 1920 x 1080 HMI
+   ========================================================= */
+
+
+/* MACHINE SIGNALS
+   Original: x = 410, y = 294
+*/
+
+.machine-signals {
+  left: 21.35%;
+  top: 27.22%;
+}
+
+
+/* SETTINGS
+   Original: x = 863, y = 294
+*/
+
+.settings {
+  left: 44.95%;
+  top: 27.22%;
+}
+
+
+/* ALARM
+   Original: x = 1303, y = 294
+*/
+
+.alarm {
+  left: 67.86%;
+  top: 27.22%;
+}
+
+
+/* HEATER
+   Original: x = 1303, y = 540
+*/
+
+.heater {
+  left: 67.86%;
+  top: 50%;
+}
+
+
+/* LEVEL SELECTION
+   Original: x = 410, y = 785
+*/
+
+.level-selection {
+  left: 21.35%;
+  top: 72.69%;
+}
+
+
+/* PRINT SELECTION
+   Original: x = 863, y = 785
+*/
+
+.print-selection {
+  left: 44.95%;
+  top: 72.69%;
+}
+
+
+/* MODE SELECTION
+   Original: x = 1303, y = 785
+*/
+
+.mode-selection {
+  left: 67.86%;
+  top: 72.69%;
+}

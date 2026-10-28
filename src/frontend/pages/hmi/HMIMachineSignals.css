@@ -1,0 +1,82 @@
+.hmi-machine-signals {
+  min-height: 100vh;
+  background: #d9d9d9;
+  padding: 60px 40px;
+  box-sizing: border-box;
+}
+
+.hmi-machine-signals-header {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 55px;
+}
+
+.hmi-machine-signals-panel {
+  width: 700px;
+  margin: 0 auto;
+  background: #eeeeee;
+  border: 1px solid #333;
+  padding: 20px 30px;
+  box-sizing: border-box;
+}
+
+.hmi-machine-signal-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 75px;
+  border-bottom: 1px solid #aaa;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.hmi-machine-signal-row:last-child {
+  border-bottom: none;
+}
+
+.hmi-machine-value {
+  width: 180px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #777;
+  background: white;
+  font-size: 20px;
+}
+
+.hmi-machine-status {
+  width: 180px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 16px;
+}
+
+.machine-running {
+  background: #00a000;
+}
+
+.machine-stopped {
+  background: #9da5b1;
+}
+
+.hmi-machine-signals-back {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  width: 100px;
+  height: 45px;
+  background: #222;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hmi-machine-signals-back:hover {
+  background: #444;
+}

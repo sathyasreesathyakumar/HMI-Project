@@ -74,11 +74,28 @@ def write(tag: TagData):
 # -----------------------------
 # Machine Controls
 # -----------------------------
+# -----------------------------
+# Machine Controls
+# -----------------------------
 @app.post("/machine/start")
 def start():
-    return opc_client.write_tag("Running", True)
+    return opc_client.write_tag(
+        "Machine.xRegular_Start",
+        True
+    )
 
 
 @app.post("/machine/stop")
 def stop():
-    return opc_client.write_tag("Running", False)
+    return opc_client.write_tag(
+        "Machine.xRegular_Stop",
+        True
+    )
+
+
+@app.post("/machine/reset")
+def reset():
+    return opc_client.write_tag(
+        "Machine.xReset_Pb",
+        True
+    )

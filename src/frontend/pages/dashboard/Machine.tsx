@@ -1,39 +1,45 @@
 import MachinePanel from "../../components/machine/MachinePanel";
 import MachineControls from "../../components/machine/MachineControls";
 import ProductionSummary from "../../components/machine/ProductionSummary";
-// import ProductionChart from "../../components/charts/ProductionChart";
-
+import { useMachine } from "../../context/MachineContext";
 
 function Machine() {
+  const { setMachineRunning } = useMachine();
+
   return (
-    <div className=" scale-95 -translate-y-4 ">
+    <div className="scale-95 -translate-y-4">
 
-      {/* Machine UI + Controls */}
+      {/* ========================================= */}
+      {/* MACHINE UI + CONTROLS                     */}
+      {/* ========================================= */}
 
-      <div className="flex justify-center ">
+      <div className="flex justify-center">
 
-        <div className="flex p-2 ">
+        <div className="flex p-2">
           <MachinePanel />
         </div>
 
-        <MachineControls />
+        <MachineControls
+          
+        />
 
       </div>
 
-
-      {/* Production Cards */}
+      {/* ========================================= */}
+      {/* PRODUCTION CARDS                          */}
+      {/* ========================================= */}
 
       <ProductionSummary />
 
-
-      {/* Production Chart */}
+      {/* ========================================= */}
+      {/* PRODUCTION CHART                          */}
+      {/* ========================================= */}
 
       {/* <ProductionChart /> */}
 
-
-      {/* Alarm Panel */}
-
-      
+      {/* ========================================= */}
+      {/* ALARM PANEL                               */}
+      {/* ========================================= */}
 
     </div>
   );

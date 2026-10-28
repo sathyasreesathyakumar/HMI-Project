@@ -1,8 +1,9 @@
 import LiveClock from "../common/LiveClock";
 import NotificationBell from "../common/NotificationBell";
-import StatusBadge from "../common/StatusBadge";
-
+// import StatusBadge from "../common/StatusBadge";
+import { useMachine } from "../../context/MachineContext";
 function Header() {
+  const { machineRunning } = useMachine();
   return (
     <header className="flex h-16 items-center justify-between border-b border-slate-700 bg-slate-900 px-5">
 
@@ -16,7 +17,15 @@ function Header() {
 
       {/* Center */}
 
-      <StatusBadge status="Machine Running" />
+      <div
+  className={`rounded-full px-4 py-2 font-semibold text-white ${
+    machineRunning
+      ? "bg-green-600"
+      : "bg-slate-600"
+  }`}
+>
+  {machineRunning ? "• MACHINE RUNNING" : "• MACHINE STOPPED"}
+</div>
 
       {/* Right */}
 

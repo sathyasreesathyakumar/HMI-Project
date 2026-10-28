@@ -1,0 +1,149 @@
+.hmi-level-selection {
+  width: 100vw;
+  min-height: 100vh;
+
+  position: relative;
+
+  background: #d9d9d9;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 60px;
+
+  box-sizing: border-box;
+}
+
+.hmi-level-header {
+  font-size: 32px;
+  font-weight: 700;
+
+  margin-bottom: 60px;
+}
+
+.hmi-level-panel {
+  width: min(750px, 85vw);
+
+  background: #eeeeee;
+
+  border: 2px solid #333;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+}
+
+.hmi-level-row {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding: 20px 0;
+
+  border-bottom: 1px solid #aaa;
+
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.hmi-level-row:last-child {
+  border-bottom: none;
+}
+
+.hmi-level-button {
+  min-width: 200px;
+
+  padding: 14px 20px;
+
+  background: #ddd;
+
+  border: 2px solid #333;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.hmi-level-button:hover {
+  background: #fff;
+}
+
+.hmi-level-value {
+  min-width: 200px;
+
+  padding: 14px 20px;
+
+  background: #fff;
+
+  border: 2px solid #777;
+
+  text-align: center;
+}
+
+.hmi-level-back {
+  position: absolute;
+
+  left: 25px;
+  bottom: 25px;
+
+  padding: 12px 25px;
+
+  background: #222;
+  color: white;
+
+  border: none;
+  border-radius: 5px;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.hmi-level-back:hover {
+  background: #444;
+}
+
+.level-enabled {
+  background: #00a83b;
+  color: white;
+}
+
+.level-disabled {
+  background: #9ca3af;
+  color: white;
+}
+
+.hmi-level-edit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hmi-level-edit input {
+  width: 100px;
+  height: 48px;
+  padding: 0 10px;
+  font-size: 18px;
+  text-align: center;
+  border: 1px solid #777;
+  background: white;
+}
+
+.hmi-level-edit button {
+  height: 48px;
+  min-width: 70px;
+  border: 1px solid #555;
+  background: #ddd;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hmi-level-edit button:hover {
+  background: #bbb;
+}

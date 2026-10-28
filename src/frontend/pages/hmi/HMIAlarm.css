@@ -1,0 +1,86 @@
+.hmi-alarm {
+  min-height: 100vh;
+  background: #d9d9d9;
+  padding: 60px 40px;
+  box-sizing: border-box;
+}
+
+.hmi-alarm-header {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 55px;
+}
+
+.hmi-alarm-panel {
+  width: 700px;
+  margin: 0 auto;
+  background: #eeeeee;
+  border: 1px solid #333;
+  padding: 20px 30px;
+  box-sizing: border-box;
+}
+
+.hmi-alarm-status-row,
+.hmi-alarm-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 75px;
+  border-bottom: 1px solid #aaa;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.hmi-alarm-row:last-child {
+  border-bottom: none;
+}
+
+.hmi-alarm-status,
+.hmi-alarm-value,
+.hmi-alarm-message {
+  width: 250px;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #777;
+  box-sizing: border-box;
+}
+
+.alarm-clear {
+  background: #9da5b1;
+  color: white;
+}
+
+.alarm-active {
+  background: #e00000;
+  color: white;
+}
+
+.hmi-alarm-value {
+  background: white;
+}
+
+.hmi-alarm-message {
+  background: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.hmi-alarm-back {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  width: 100px;
+  height: 45px;
+  background: #222;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hmi-alarm-back:hover {
+  background: #444;
+}

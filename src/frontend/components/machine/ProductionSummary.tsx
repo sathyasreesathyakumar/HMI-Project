@@ -4,6 +4,8 @@ import { readTag } from "../../services/opcService";
 function ProductionSummary() {
 
   const [batchProduction, setBatchProduction] = useState(0);
+  const [totalProduction, setTotalProduction] = useState(0);
+  const [productionPerHour, setProductionPerHour] = useState(0);
 
   const loadBatchProduction = async () => {
     
@@ -22,6 +24,51 @@ function ProductionSummary() {
 
     const interval = setInterval(() => {
         loadBatchProduction();
+    }, 1000);
+
+    return () => clearInterval(interval);
+}, []);
+
+const loadTotalProduction = async () => {
+    
+    const result = await readTag("total production");
+    // console.log("Total:", result);
+    if (result.status === "success") {
+      setTotalProduction(result.value);
+    } else {
+      console.log(result.message);
+    }
+
+  };
+
+ useEffect(() => {
+    loadTotalProduction();
+
+    const interval = setInterval(() => {
+        loadTotalProduction();
+    }, 1000);
+
+    return () => clearInterval(interval);
+}, []);
+
+
+const loadProductionPerHour = async () => {
+    
+    const result = await readTag("production / hour");
+    // console.log("Production per hour:", result);
+    if (result.status === "success") {
+      setProductionPerHour(result.value);
+    } else {
+      console.log(result.message);
+    }
+
+  };
+
+ useEffect(() => {
+    loadProductionPerHour();
+
+    const interval = setInterval(() => {
+        loadProductionPerHour();
     }, 1000);
 
     return () => clearInterval(interval);
@@ -47,7 +94,7 @@ function ProductionSummary() {
         </p>
 
         <h1 className="mt-1 text-4xl font-bold text-cyan-400">
-          7850
+          {totalProduction}
         </h1>
       </div>
 
@@ -58,7 +105,7 @@ function ProductionSummary() {
         </p>
 
         <h1 className="mt-1 text-4xl font-bold text-cyan-400">
-          450
+          {productionPerHour}
         </h1>
       </div>
 

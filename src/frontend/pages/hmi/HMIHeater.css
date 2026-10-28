@@ -1,0 +1,96 @@
+.hmi-heater {
+  min-height: 100vh;
+  background: #d9d9d9;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.hmi-heater-header {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 35px;
+}
+
+.hmi-heater-panel {
+  width: 900px;
+  max-width: 95%;
+  margin: 0 auto;
+  background: #eeeeee;
+  border: 1px solid #333;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.hmi-heater-mode-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #aaa;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.hmi-heater-mode-button {
+  width: 160px;
+  height: 50px;
+  border: 1px solid #555;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.heater-mode-on {
+  background: #009900;
+}
+
+.heater-mode-off {
+  background: #888;
+}
+
+.hmi-heater-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 30px;
+}
+
+.hmi-heater-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #bbb;
+  font-weight: bold;
+}
+
+.hmi-heater-button {
+  width: 90px;
+  height: 38px;
+  border: 1px solid #555;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.heater-on {
+  background: #009900;
+}
+
+.heater-off {
+  background: #888;
+}
+
+.hmi-heater-back {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  width: 100px;
+  height: 45px;
+  background: #222;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
